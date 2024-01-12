@@ -1,0 +1,24 @@
+{
+  "name": "mod-repo-19",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "author": "Matthew",
+  "description": "A PWA for test editing.",
+  "keywords": [],
+  "license": "ISC",
+  "main": "server.js",
+  "packages": {},
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "build": "cd client && npm run build",
+    "client": "cd client && npm start",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "server": "cd server nodemon server.js --ignore client",
+    "start": "npm run build && cd server && node server.js",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\""
+  }
+}
